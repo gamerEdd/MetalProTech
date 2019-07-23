@@ -22,6 +22,10 @@ public class Categoria  implements java.io.Serializable {
        this.nombrecateg = nombrecateg;
        this.productos = productos;
     }
+
+    public Categoria(String nombrecateg) {
+        this.nombrecateg = nombrecateg;
+    }
    
     public Integer getCodcateg() {
         return this.codcateg;

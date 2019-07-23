@@ -29,6 +29,13 @@ public class Usuario  implements java.io.Serializable {
        this.apenom = apenom;
        this.admin = admin;
     }
+
+    public Usuario(String login, String clave, String apenom, Character admin) {
+        this.login = login;
+        this.clave = clave;
+        this.apenom = apenom;
+        this.admin = admin;
+    }
    
     public int getIdusuario() {
         return this.idusuario;
