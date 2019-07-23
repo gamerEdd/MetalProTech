@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/07/2019 14:36:52 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Producto" table="producto" catalog="metalprotechbdd" optimistic-lock="version">
+        <id name="codPro" type="string">
+            <column name="cod_pro" length="6" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="categoria" class="Modelo.Categoria" fetch="select">
+            <column name="codcateg" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tipoprod" class="Modelo.Tipoprod" fetch="select">
+            <column name="tipoprod_idtipoprod" not-null="true" />
+        </many-to-one>
+        <many-to-one name="umedida" class="Modelo.Umedida" fetch="select">
+            <column name="codmedida" length="6" not-null="true" />
+        </many-to-one>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="30" not-null="true" />
+        </property>
+        <property name="precio1" type="string">
+            <column name="precio1" length="10" not-null="true" />
+        </property>
+        <property name="stock" type="string">
+            <column name="stock" length="10" not-null="true" />
+        </property>
+        <property name="precio2" type="string">
+            <column name="precio2" length="10" />
+        </property>
+        <property name="precioc" type="string">
+            <column name="precioc" length="10" />
+        </property>
+        <set name="detallefacturas" table="detallefactura" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cod_pro" length="6" not-null="true" />
+            </key>
+            <one-to-many class="Modelo.Detallefactura" />
+        </set>
+        <set name="detallefacturacs" table="detallefacturac" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cod_pro" length="6" />
+            </key>
+            <one-to-many class="Modelo.Detallefacturac" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/07/2019 14:36:52 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Cliente" table="cliente" catalog="metalprotechbdd" optimistic-lock="version">
+        <id name="codCli" type="string">
+            <column name="cod_cli" length="6" />
+            <generator class="assigned" />
+        </id>
+        <property name="nomCli" type="string">
+            <column name="nom_cli" length="30" not-null="true" />
+        </property>
+        <property name="apeCli" type="string">
+            <column name="ape_cli" length="30" not-null="true" />
+        </property>
+        <property name="sexoCli" type="string">
+            <column name="sexo_cli" length="1" not-null="true" />
+        </property>
+        <property name="dniCli" type="string">
+            <column name="dni_cli" length="10" not-null="true" />
+        </property>
+        <property name="telCli" type="string">
+            <column name="tel_cli" length="10" not-null="true" />
+        </property>
+        <property name="rucCli" type="string">
+            <column name="ruc_cli" length="13" not-null="true" />
+        </property>
+        <property name="emailCli" type="string">
+            <column name="email_cli" length="30" not-null="true" />
+        </property>
+        <property name="dirCli" type="string">
+            <column name="dir_cli" length="50" not-null="true" />
+        </property>
+        <property name="tipoCli" type="string">
+            <column name="tipo_cli" length="15" />
+        </property>
+        <set name="facturas" table="factura" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cod_cli" length="6" not-null="true" />
+            </key>
+            <one-to-many class="Modelo.Factura" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/07/2019 14:36:52 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Detallefactura" table="detallefactura" catalog="metalprotechbdd" optimistic-lock="version">
+        <id name="iddetalle" type="int">
+            <column name="iddetalle" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="factura" class="Modelo.Factura" fetch="select">
+            <column name="num_fac" length="8" not-null="true" />
+        </many-to-one>
+        <many-to-one name="producto" class="Modelo.Producto" fetch="select">
+            <column name="cod_pro" length="6" not-null="true" />
+        </many-to-one>
+        <property name="desPro" type="string">
+            <column name="des_pro" length="30" not-null="true" />
+        </property>
+        <property name="cantPro" type="string">
+            <column name="cant_pro" length="3" not-null="true" />
+        </property>
+        <property name="preUnit" type="string">
+            <column name="pre_unit" length="10" not-null="true" />
+        </property>
+        <property name="preTot" type="string">
+            <column name="pre_tot" length="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

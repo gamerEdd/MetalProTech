@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/07/2019 14:36:52 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Proveedor" table="proveedor" catalog="metalprotechbdd" optimistic-lock="version">
+        <id name="provid" type="string">
+            <column name="provid" length="6" />
+            <generator class="assigned" />
+        </id>
+        <property name="provnombre" type="string">
+            <column name="provnombre" length="50" not-null="true" />
+        </property>
+        <property name="provciudad" type="string">
+            <column name="provciudad" length="30" />
+        </property>
+        <property name="provdir" type="string">
+            <column name="provdir" length="50" />
+        </property>
+        <property name="provcontacto" type="string">
+            <column name="provcontacto" length="50" not-null="true" />
+        </property>
+        <property name="provcelular" type="string">
+            <column name="provcelular" length="12" />
+        </property>
+        <property name="provtelefono" type="string">
+            <column name="provtelefono" length="12" />
+        </property>
+        <property name="provemail" type="string">
+            <column name="provemail" length="30" />
+        </property>
+        <set name="facturacs" table="facturac" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="provid" length="6" />
+            </key>
+            <one-to-many class="Modelo.Facturac" />
+        </set>
+    </class>
+</hibernate-mapping>

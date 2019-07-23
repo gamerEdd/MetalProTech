@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/07/2019 14:36:52 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Facturac" table="facturac" catalog="metalprotechbdd" optimistic-lock="version">
+        <id name="numFac" type="string">
+            <column name="num_fac" length="8" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="proveedor" class="Modelo.Proveedor" fetch="select">
+            <column name="provid" length="6" />
+        </many-to-one>
+        <property name="subtotal" type="string">
+            <column name="subtotal" length="10" />
+        </property>
+        <property name="iva" type="string">
+            <column name="iva" length="40" />
+        </property>
+        <property name="total" type="string">
+            <column name="total" length="20" />
+        </property>
+        <property name="fecFac" type="string">
+            <column name="fec_fac" length="20" />
+        </property>
+        <property name="estado" type="string">
+            <column name="estado" length="45" />
+        </property>
+        <set name="detallefacturacs" table="detallefacturac" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="num_fac" length="8" />
+            </key>
+            <one-to-many class="Modelo.Detallefacturac" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/07/2019 14:36:52 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Factura" table="factura" catalog="metalprotechbdd" optimistic-lock="version">
+        <id name="numFac" type="string">
+            <column name="num_fac" length="8" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cliente" class="Modelo.Cliente" fetch="select">
+            <column name="cod_cli" length="6" not-null="true" />
+        </many-to-one>
+        <property name="rucCli" type="string">
+            <column name="ruc_cli" length="11" not-null="true" />
+        </property>
+        <property name="subtotal" type="string">
+            <column name="subtotal" length="10" not-null="true" />
+        </property>
+        <property name="igv" type="string">
+            <column name="igv" length="40" not-null="true" />
+        </property>
+        <property name="total" type="string">
+            <column name="total" length="20" not-null="true" />
+        </property>
+        <property name="fecFac" type="string">
+            <column name="fec_fac" length="20" not-null="true" />
+        </property>
+        <property name="estado" type="string">
+            <column name="estado" length="45" />
+        </property>
+        <set name="detallefacturas" table="detallefactura" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="num_fac" length="8" not-null="true" />
+            </key>
+            <one-to-many class="Modelo.Detallefactura" />
+        </set>
+    </class>
+</hibernate-mapping>
