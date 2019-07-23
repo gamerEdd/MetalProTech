@@ -27,6 +27,11 @@ public class Umedida  implements java.io.Serializable {
        this.nommedida = nommedida;
        this.productos = productos;
     }
+
+    public Umedida(String codmedida, String nommedida) {
+        this.codmedida = codmedida;
+        this.nommedida = nommedida;
+    }
    
     public String getCodmedida() {
         return this.codmedida;
