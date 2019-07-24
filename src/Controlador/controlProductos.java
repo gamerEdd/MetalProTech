@@ -40,7 +40,7 @@ public class controlProductos {
         session.save(cat);
         tx.commit();
         session.close();
-        JOptionPane.showMessageDialog(null, "Se ha Guardado Una Nueva Categoria ");
+        JOptionPane.showMessageDialog(null, "Se ha Guardado Una Nueva Medida ");
          JOptionPane.showMessageDialog(null, "Reinicie la Ventana Para Ver Los Cambios ");
         
     }
@@ -56,8 +56,8 @@ public class controlProductos {
     }
         public static List<Umedida> MedidasShow(){
         Session sesion = NewHibernateUtil.getSessionFactory().openSession();
-        List<Umedida> medida = sesion.createCriteria(Categoria.class).list();
+        List<Umedida> medida = sesion.createCriteria(Umedida.class).list();
         return medida;
     }
-      
+
 }

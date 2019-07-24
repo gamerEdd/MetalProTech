@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 23/07/2019 14:36:52 by Hibernate Tools 4.3.1 -->
+<!-- Generated 23/07/2019 18:03:31 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Modelo.Cliente" table="cliente" catalog="metalprotechbdd" optimistic-lock="version">
-        <id name="codCli" type="string">
-            <column name="cod_cli" length="6" />
+        <id name="codCli" type="int">
+            <column name="cod_cli" />
             <generator class="assigned" />
         </id>
         <property name="nomCli" type="string">
@@ -37,7 +37,7 @@
         </property>
         <set name="facturas" table="factura" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="cod_cli" length="6" not-null="true" />
+                <column name="cliente_cod_cli" not-null="true" />
             </key>
             <one-to-many class="Modelo.Factura" />
         </set>

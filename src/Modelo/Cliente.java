@@ -1,5 +1,5 @@
 package Modelo;
-// Generated 23/07/2019 14:36:50 by Hibernate Tools 4.3.1
+// Generated 23/07/2019 18:03:30 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Cliente  implements java.io.Serializable {
 
 
-     private String codCli;
+     private int codCli;
      private String nomCli;
      private String apeCli;
      private String sexoCli;
@@ -27,7 +27,7 @@ public class Cliente  implements java.io.Serializable {
     }
 
 	
-    public Cliente(String codCli, String nomCli, String apeCli, String sexoCli, String dniCli, String telCli, String rucCli, String emailCli, String dirCli) {
+    public Cliente(int codCli, String nomCli, String apeCli, String sexoCli, String dniCli, String telCli, String rucCli, String emailCli, String dirCli) {
         this.codCli = codCli;
         this.nomCli = nomCli;
         this.apeCli = apeCli;
@@ -38,7 +38,7 @@ public class Cliente  implements java.io.Serializable {
         this.emailCli = emailCli;
         this.dirCli = dirCli;
     }
-    public Cliente(String codCli, String nomCli, String apeCli, String sexoCli, String dniCli, String telCli, String rucCli, String emailCli, String dirCli, String tipoCli, Set facturas) {
+    public Cliente(int codCli, String nomCli, String apeCli, String sexoCli, String dniCli, String telCli, String rucCli, String emailCli, String dirCli, String tipoCli, Set facturas) {
        this.codCli = codCli;
        this.nomCli = nomCli;
        this.apeCli = apeCli;
@@ -52,11 +52,11 @@ public class Cliente  implements java.io.Serializable {
        this.facturas = facturas;
     }
    
-    public String getCodCli() {
+    public int getCodCli() {
         return this.codCli;
     }
     
-    public void setCodCli(String codCli) {
+    public void setCodCli(int codCli) {
         this.codCli = codCli;
     }
     public String getNomCli() {

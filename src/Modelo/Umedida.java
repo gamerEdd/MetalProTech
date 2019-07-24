@@ -1,5 +1,5 @@
 package Modelo;
-// Generated 23/07/2019 14:36:50 by Hibernate Tools 4.3.1
+// Generated 23/07/2019 18:03:30 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Umedida  implements java.io.Serializable {
 
 
-     private String codmedida;
+     private int codmedida;
      private String nommedida;
      private Set productos = new HashSet(0);
 
@@ -19,25 +19,24 @@ public class Umedida  implements java.io.Serializable {
     }
 
 	
-    public Umedida(String codmedida) {
+    public Umedida(int codmedida) {
         this.codmedida = codmedida;
     }
-    public Umedida(String codmedida, String nommedida, Set productos) {
+    public Umedida(int codmedida, String nommedida, Set productos) {
        this.codmedida = codmedida;
        this.nommedida = nommedida;
        this.productos = productos;
     }
 
-    public Umedida(String codmedida, String nommedida) {
-        this.codmedida = codmedida;
+    public Umedida(String nommedida) {
         this.nommedida = nommedida;
     }
    
-    public String getCodmedida() {
+    public int getCodmedida() {
         return this.codmedida;
     }
     
-    public void setCodmedida(String codmedida) {
+    public void setCodmedida(int codmedida) {
         this.codmedida = codmedida;
     }
     public String getNommedida() {

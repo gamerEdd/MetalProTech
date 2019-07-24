@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 23/07/2019 14:36:52 by Hibernate Tools 4.3.1 -->
+<!-- Generated 23/07/2019 18:03:31 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Modelo.Facturac" table="facturac" catalog="metalprotechbdd" optimistic-lock="version">
-        <id name="numFac" type="string">
-            <column name="num_fac" length="8" />
+        <id name="numFac" type="int">
+            <column name="num_fac" />
             <generator class="assigned" />
         </id>
         <many-to-one name="proveedor" class="Modelo.Proveedor" fetch="select">
-            <column name="provid" length="6" />
+            <column name="proveedor_provid" not-null="true" />
         </many-to-one>
         <property name="subtotal" type="string">
             <column name="subtotal" length="10" />
@@ -28,7 +28,7 @@
         </property>
         <set name="detallefacturacs" table="detallefacturac" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="num_fac" length="8" />
+                <column name="facturac_num_fac" not-null="true" />
             </key>
             <one-to-many class="Modelo.Detallefacturac" />
         </set>

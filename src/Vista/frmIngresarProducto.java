@@ -6,8 +6,8 @@
 package Vista;
 
 import Controlador.controlProductos;
-import Modelo.Categoria;
-import Modelo.Umedida;
+import Modelo.*;
+
 import Varios.DisplayItem;
 import java.awt.Dialog;
 import java.util.List;
@@ -23,32 +23,37 @@ public class frmIngresarProducto extends javax.swing.JInternalFrame {
      * Creates new form frmIngresarProducto
      */
     public frmIngresarProducto() {
+       
         initComponents();
-        MostrarCategorias();
+         MostrarCategorias();
+        MostrarMedidas();
         
+
     }
 
-void MostrarCategorias(){
+    void MostrarCategorias() {
         DefaultComboBoxModel datos = new DefaultComboBoxModel();
         List<Categoria> sucursales = controlProductos.categoriasShow();
-        
+
         for (Categoria o : sucursales) {
             DisplayItem d = new DisplayItem(o.getNombrecateg(), o.getCodcateg());
             datos.addElement(d);
         }
         cmbcategoria.setModel(datos);
     }
-void MostrarMedidas(){
+
+    void MostrarMedidas() {
         DefaultComboBoxModel datos = new DefaultComboBoxModel();
-        List<Umedida> sucursales = controlProductos.MedidasShow();
-        
-        for (Umedida o : sucursales) {
-            DisplayItem d = new DisplayItem(o.getNommedida(),o.getCodmedida());
-            //DisplayItem d = new DisplayItem(o.getNommedida(), o.getCodmedida());
+        List<Umedida> medidas = controlProductos.MedidasShow();
+
+        for (Umedida o : medidas) {
+            DisplayItem d = new DisplayItem(o.getNommedida(), o.getCodmedida());
+
             datos.addElement(d);
         }
-        cmbcategoria.setModel(datos);
+        cmbMedidas.setModel(datos);
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -75,7 +80,7 @@ void MostrarMedidas(){
         labelCustom8 = new elaprendiz.gui.label.LabelCustom();
         labelCustom9 = new elaprendiz.gui.label.LabelCustom();
         cmbcategoria = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cmbMedidas = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -217,7 +222,7 @@ void MostrarMedidas(){
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cmbMedidas, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jComboBox3, javax.swing.GroupLayout.Alignment.LEADING, 0, 144, Short.MAX_VALUE)
                             .addComponent(cmbcategoria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -237,7 +242,7 @@ void MostrarMedidas(){
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCustom8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbMedidas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -292,25 +297,25 @@ void MostrarMedidas(){
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      mdiMenuPrincipal p= new mdiMenuPrincipal();
-        dialgonIngresarCategoria categoria = new dialgonIngresarCategoria(p  , closable);
+        mdiMenuPrincipal p = new mdiMenuPrincipal();
+        dialgonIngresarCategoria categoria = new dialgonIngresarCategoria(p, closable);
         categoria.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        mdiMenuPrincipal p= new mdiMenuPrincipal();
-        dialogIngresarMedida categoria = new dialogIngresarMedida(p  , closable);
+        mdiMenuPrincipal p = new mdiMenuPrincipal();
+        dialogIngresarMedida categoria = new dialogIngresarMedida(p, closable);
         categoria.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cmbMedidas;
     private javax.swing.JComboBox<String> cmbcategoria;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

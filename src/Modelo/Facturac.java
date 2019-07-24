@@ -1,5 +1,5 @@
 package Modelo;
-// Generated 23/07/2019 14:36:50 by Hibernate Tools 4.3.1
+// Generated 23/07/2019 18:03:30 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Facturac  implements java.io.Serializable {
 
 
-     private String numFac;
+     private int numFac;
      private Proveedor proveedor;
      private String subtotal;
      private String iva;
@@ -24,10 +24,11 @@ public class Facturac  implements java.io.Serializable {
     }
 
 	
-    public Facturac(String numFac) {
+    public Facturac(int numFac, Proveedor proveedor) {
         this.numFac = numFac;
+        this.proveedor = proveedor;
     }
-    public Facturac(String numFac, Proveedor proveedor, String subtotal, String iva, String total, String fecFac, String estado, Set detallefacturacs) {
+    public Facturac(int numFac, Proveedor proveedor, String subtotal, String iva, String total, String fecFac, String estado, Set detallefacturacs) {
        this.numFac = numFac;
        this.proveedor = proveedor;
        this.subtotal = subtotal;
@@ -38,11 +39,11 @@ public class Facturac  implements java.io.Serializable {
        this.detallefacturacs = detallefacturacs;
     }
    
-    public String getNumFac() {
+    public int getNumFac() {
         return this.numFac;
     }
     
-    public void setNumFac(String numFac) {
+    public void setNumFac(int numFac) {
         this.numFac = numFac;
     }
     public Proveedor getProveedor() {

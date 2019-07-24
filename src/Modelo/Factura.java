@@ -1,5 +1,5 @@
 package Modelo;
-// Generated 23/07/2019 14:36:50 by Hibernate Tools 4.3.1
+// Generated 23/07/2019 18:03:30 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Factura  implements java.io.Serializable {
 
 
-     private String numFac;
+     private int numFac;
      private Cliente cliente;
      private String rucCli;
      private String subtotal;
@@ -25,7 +25,7 @@ public class Factura  implements java.io.Serializable {
     }
 
 	
-    public Factura(String numFac, Cliente cliente, String rucCli, String subtotal, String igv, String total, String fecFac) {
+    public Factura(int numFac, Cliente cliente, String rucCli, String subtotal, String igv, String total, String fecFac) {
         this.numFac = numFac;
         this.cliente = cliente;
         this.rucCli = rucCli;
@@ -34,7 +34,7 @@ public class Factura  implements java.io.Serializable {
         this.total = total;
         this.fecFac = fecFac;
     }
-    public Factura(String numFac, Cliente cliente, String rucCli, String subtotal, String igv, String total, String fecFac, String estado, Set detallefacturas) {
+    public Factura(int numFac, Cliente cliente, String rucCli, String subtotal, String igv, String total, String fecFac, String estado, Set detallefacturas) {
        this.numFac = numFac;
        this.cliente = cliente;
        this.rucCli = rucCli;
@@ -46,11 +46,11 @@ public class Factura  implements java.io.Serializable {
        this.detallefacturas = detallefacturas;
     }
    
-    public String getNumFac() {
+    public int getNumFac() {
         return this.numFac;
     }
     
-    public void setNumFac(String numFac) {
+    public void setNumFac(int numFac) {
         this.numFac = numFac;
     }
     public Cliente getCliente() {

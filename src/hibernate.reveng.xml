@@ -41,15 +41,15 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="metalprotechbdd"/>
-  <table-filter match-name="facturac"/>
-  <table-filter match-name="detallefactura"/>
-  <table-filter match-name="proveedor"/>
-  <table-filter match-name="detallefacturac"/>
-  <table-filter match-name="categoria"/>
-  <table-filter match-name="cliente"/>
-  <table-filter match-name="umedida"/>
-  <table-filter match-name="usuario"/>
-  <table-filter match-name="producto"/>
-  <table-filter match-name="tipoprod"/>
   <table-filter match-name="factura"/>
+  <table-filter match-name="facturac"/>
+  <table-filter match-name="categoria"/>
+  <table-filter match-name="producto"/>
+  <table-filter match-name="proveedor"/>
+  <table-filter match-name="usuario"/>
+  <table-filter match-name="cliente"/>
+  <table-filter match-name="tipoprod"/>
+  <table-filter match-name="umedida"/>
+  <table-filter match-name="detallefactura"/>
+  <table-filter match-name="detallefacturac"/>
 </hibernate-reverse-engineering>

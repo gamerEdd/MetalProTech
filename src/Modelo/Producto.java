@@ -1,5 +1,5 @@
 package Modelo;
-// Generated 23/07/2019 14:36:50 by Hibernate Tools 4.3.1
+// Generated 23/07/2019 18:03:30 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Producto  implements java.io.Serializable {
 
 
-     private String codPro;
+     private int codPro;
      private Categoria categoria;
      private Tipoprod tipoprod;
      private Umedida umedida;
@@ -20,14 +20,14 @@ public class Producto  implements java.io.Serializable {
      private String stock;
      private String precio2;
      private String precioc;
-     private Set detallefacturas = new HashSet(0);
      private Set detallefacturacs = new HashSet(0);
+     private Set detallefacturas = new HashSet(0);
 
     public Producto() {
     }
 
 	
-    public Producto(String codPro, Categoria categoria, Tipoprod tipoprod, Umedida umedida, String descripcion, String precio1, String stock) {
+    public Producto(int codPro, Categoria categoria, Tipoprod tipoprod, Umedida umedida, String descripcion, String precio1, String stock) {
         this.codPro = codPro;
         this.categoria = categoria;
         this.tipoprod = tipoprod;
@@ -36,7 +36,7 @@ public class Producto  implements java.io.Serializable {
         this.precio1 = precio1;
         this.stock = stock;
     }
-    public Producto(String codPro, Categoria categoria, Tipoprod tipoprod, Umedida umedida, String descripcion, String precio1, String stock, String precio2, String precioc, Set detallefacturas, Set detallefacturacs) {
+    public Producto(int codPro, Categoria categoria, Tipoprod tipoprod, Umedida umedida, String descripcion, String precio1, String stock, String precio2, String precioc, Set detallefacturacs, Set detallefacturas) {
        this.codPro = codPro;
        this.categoria = categoria;
        this.tipoprod = tipoprod;
@@ -46,15 +46,15 @@ public class Producto  implements java.io.Serializable {
        this.stock = stock;
        this.precio2 = precio2;
        this.precioc = precioc;
-       this.detallefacturas = detallefacturas;
        this.detallefacturacs = detallefacturacs;
+       this.detallefacturas = detallefacturas;
     }
    
-    public String getCodPro() {
+    public int getCodPro() {
         return this.codPro;
     }
     
-    public void setCodPro(String codPro) {
+    public void setCodPro(int codPro) {
         this.codPro = codPro;
     }
     public Categoria getCategoria() {
@@ -113,19 +113,19 @@ public class Producto  implements java.io.Serializable {
     public void setPrecioc(String precioc) {
         this.precioc = precioc;
     }
-    public Set getDetallefacturas() {
-        return this.detallefacturas;
-    }
-    
-    public void setDetallefacturas(Set detallefacturas) {
-        this.detallefacturas = detallefacturas;
-    }
     public Set getDetallefacturacs() {
         return this.detallefacturacs;
     }
     
     public void setDetallefacturacs(Set detallefacturacs) {
         this.detallefacturacs = detallefacturacs;
+    }
+    public Set getDetallefacturas() {
+        return this.detallefacturas;
+    }
+    
+    public void setDetallefacturas(Set detallefacturas) {
+        this.detallefacturas = detallefacturas;
     }
 
 

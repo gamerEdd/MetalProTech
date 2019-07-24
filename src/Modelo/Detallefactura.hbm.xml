@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 23/07/2019 14:36:52 by Hibernate Tools 4.3.1 -->
+<!-- Generated 23/07/2019 18:03:31 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Modelo.Detallefactura" table="detallefactura" catalog="metalprotechbdd" optimistic-lock="version">
         <id name="iddetalle" type="int">
@@ -9,10 +9,10 @@
             <generator class="assigned" />
         </id>
         <many-to-one name="factura" class="Modelo.Factura" fetch="select">
-            <column name="num_fac" length="8" not-null="true" />
+            <column name="factura_num_fac" not-null="true" />
         </many-to-one>
         <many-to-one name="producto" class="Modelo.Producto" fetch="select">
-            <column name="cod_pro" length="6" not-null="true" />
+            <column name="producto_cod_pro" not-null="true" />
         </many-to-one>
         <property name="desPro" type="string">
             <column name="des_pro" length="30" not-null="true" />

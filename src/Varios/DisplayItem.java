@@ -11,7 +11,7 @@ package Varios;
 public class DisplayItem {
     private String texto;
     private int valor;
-    private String valor2;
+
     
     
 
@@ -44,17 +44,7 @@ public class DisplayItem {
         this.valor = valor;
     }
 
-    public DisplayItem(String texto, String valor2) {
-        this.texto = texto;
-        this.valor2 = valor2;
-    }
-public String getValor2() {
-        return valor2;
-    }
 
-    public void setValor2(String valor2) {
-        this.valor2 = valor2;
-    }
  
 
     @Override
@@ -63,9 +53,7 @@ public String getValor2() {
         return this.texto;
     }
     
-public String ti(){
-    return this.valor2;
-}
+
     
  
 }
