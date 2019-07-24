@@ -28,6 +28,8 @@ public class mdiMenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         desktop = new javax.swing.JDesktopPane();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
+        jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         editMenu = new javax.swing.JMenu();
         cutMenuItem = new javax.swing.JMenuItem();
@@ -47,6 +49,28 @@ public class mdiMenuPrincipal extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jInternalFrame1.setVisible(true);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/InfatuatedFineBuck-small.gif"))); // NOI18N
+
+        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
+        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
+        jInternalFrame1Layout.setHorizontalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
+                .addGap(0, 903, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jInternalFrame1Layout.setVerticalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 233, Short.MAX_VALUE))
+        );
+
+        desktop.add(jInternalFrame1);
+        jInternalFrame1.setBounds(0, 0, 1310, 670);
 
         editMenu.setMnemonic('e');
         editMenu.setText("Matenimiento");
@@ -87,6 +111,11 @@ public class mdiMenuPrincipal extends javax.swing.JFrame {
 
         contentMenuItem.setMnemonic('c');
         contentMenuItem.setText("Ventas");
+        contentMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contentMenuItemActionPerformed(evt);
+            }
+        });
         helpMenu.add(contentMenuItem);
 
         aboutMenuItem.setMnemonic('a');
@@ -157,6 +186,13 @@ public class mdiMenuPrincipal extends javax.swing.JFrame {
         frm.show();
     }//GEN-LAST:event_copyMenuItemActionPerformed
 
+    private void contentMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contentMenuItemActionPerformed
+       desktop.removeAll();
+       frmFactura frm = new frmFactura();
+       desktop.add(frm);
+       frm.show();
+    }//GEN-LAST:event_contentMenuItemActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -201,6 +237,8 @@ public class mdiMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JDesktopPane desktop;
     private javax.swing.JMenu editMenu;
     private javax.swing.JMenu helpMenu;
+    private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuItem jMenuItem1;

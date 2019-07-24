@@ -51,6 +51,18 @@ public class Cliente  implements java.io.Serializable {
        this.tipoCli = tipoCli;
        this.facturas = facturas;
     }
+
+    public Cliente(String nomCli, String apeCli, String sexoCli, String dniCli, String telCli, String rucCli, String emailCli, String dirCli, String tipoCli) {
+        this.nomCli = nomCli;
+        this.apeCli = apeCli;
+        this.sexoCli = sexoCli;
+        this.dniCli = dniCli;
+        this.telCli = telCli;
+        this.rucCli = rucCli;
+        this.emailCli = emailCli;
+        this.dirCli = dirCli;
+        this.tipoCli = tipoCli;
+    }
    
     public int getCodCli() {
         return this.codCli;
