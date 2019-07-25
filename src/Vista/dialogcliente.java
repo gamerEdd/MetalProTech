@@ -288,6 +288,7 @@ JOptionPane.showMessageDialog(null, codigo);
             }
   
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
